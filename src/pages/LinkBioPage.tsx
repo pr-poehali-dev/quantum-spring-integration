@@ -2,45 +2,57 @@ import { motion } from "framer-motion"
 import { ProfileSection } from "@/components/ProfileSection"
 import { LinkCard } from "@/components/LinkCard"
 import { SocialFooter } from "@/components/SocialFooter"
-import { Globe, Youtube, Mail, ShoppingBag, FileText, MessageCircle, Send } from "lucide-react"
+import { UtensilsCrossed, Phone, MapPin, Clock, Instagram, Send } from "lucide-react"
 
 const links = [
   {
-    title: "Мой сайт",
-    description: "Портфолио и услуги",
-    href: "#",
-    icon: Globe,
+    title: "Димсамы",
+    description: "Классические и авторские корзиночки",
+    href: "#dimsums",
+    icon: UtensilsCrossed,
   },
   {
-    title: "YouTube канал",
-    description: "Видео и туториалы",
-    href: "#",
-    icon: Youtube,
+    title: "Лапша",
+    description: "Вок-лапша и бульоны",
+    href: "#noodles",
+    icon: UtensilsCrossed,
   },
   {
-    title: "Магазин",
-    description: "Товары и услуги",
-    href: "#",
-    icon: ShoppingBag,
+    title: "Рис и закуски",
+    description: "Жареный рис, спринг-роллы, сатэ",
+    href: "#rice",
+    icon: UtensilsCrossed,
   },
   {
-    title: "Telegram",
-    description: "Написать напрямую",
-    href: "#",
-    icon: Send,
+    title: "Супы",
+    description: "Том ям, фо бо, мисо",
+    href: "#soups",
+    icon: UtensilsCrossed,
   },
   {
-    title: "Бесплатные материалы",
-    description: "Шаблоны и гайды",
-    href: "#",
-    icon: FileText,
+    title: "Напитки",
+    description: "Чай, свежевыжатые, матча-лatte",
+    href: "#drinks",
+    icon: UtensilsCrossed,
+  },
+  {
+    title: "Позвонить нам",
+    description: "+7 (999) 123-45-67",
+    href: "tel:+79991234567",
+    icon: Phone,
+  },
+  {
+    title: "Наш адрес",
+    description: "ул. Бамбуковая, 8 · Открыты 12:00–23:00",
+    href: "#contacts",
+    icon: MapPin,
   },
 ]
 
 const socials = [
+  { icon: Instagram, href: "#", label: "Instagram" },
   { icon: Send, href: "#", label: "Telegram" },
-  { icon: MessageCircle, href: "#", label: "WhatsApp" },
-  { icon: Mail, href: "#", label: "Email" },
+  { icon: Phone, href: "tel:+79991234567", label: "Телефон" },
 ]
 
 const containerVariants = {
@@ -73,14 +85,14 @@ const itemVariants = {
 export function LinkBioPage() {
   return (
     <main className="relative min-h-screen px-6 py-10 flex flex-col overflow-hidden">
-      <div className="fixed inset-0 z-0 bg-gradient-to-br from-slate-50 via-white to-slate-100" />
+      <div className="fixed inset-0 z-0" style={{ background: "#1F1F1F" }} />
 
-      {/* Animated gradient orbs */}
+      {/* Animated gradient orbs — бордо */}
       <motion.div
         className="fixed z-0 w-[500px] h-[500px] rounded-full"
         style={{
-          background: "radial-gradient(circle, rgba(147, 51, 234, 0.25) 0%, transparent 70%)",
-          filter: "blur(60px)",
+          background: "radial-gradient(circle, rgba(158, 47, 54, 0.3) 0%, transparent 70%)",
+          filter: "blur(80px)",
           top: "-10%",
           left: "-10%",
         }}
@@ -89,18 +101,15 @@ export function LinkBioPage() {
           y: [0, 50, 100, 0],
           scale: [1, 1.2, 0.9, 1],
         }}
-        transition={{
-          duration: 20,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
+        transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
       />
 
+      {/* Золотой орб */}
       <motion.div
         className="fixed z-0 w-[600px] h-[600px] rounded-full"
         style={{
-          background: "radial-gradient(circle, rgba(236, 72, 153, 0.2) 0%, transparent 70%)",
-          filter: "blur(80px)",
+          background: "radial-gradient(circle, rgba(214, 179, 106, 0.15) 0%, transparent 70%)",
+          filter: "blur(100px)",
           top: "30%",
           right: "-20%",
         }}
@@ -109,17 +118,13 @@ export function LinkBioPage() {
           y: [0, 80, -40, 0],
           scale: [1, 0.85, 1.15, 1],
         }}
-        transition={{
-          duration: 25,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
+        transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
       />
 
       <motion.div
         className="fixed z-0 w-[450px] h-[450px] rounded-full"
         style={{
-          background: "radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(158, 47, 54, 0.2) 0%, transparent 70%)",
           filter: "blur(70px)",
           bottom: "-5%",
           left: "20%",
@@ -129,69 +134,7 @@ export function LinkBioPage() {
           y: [0, -60, 30, 0],
           scale: [1, 1.1, 0.95, 1],
         }}
-        transition={{
-          duration: 18,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
-
-      <motion.div
-        className="fixed z-0 w-[350px] h-[350px] rounded-full"
-        style={{
-          background: "radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, transparent 70%)",
-          filter: "blur(50px)",
-          top: "60%",
-          left: "-5%",
-        }}
-        animate={{
-          x: [0, 40, 80, 0],
-          y: [0, -40, 20, 0],
-          scale: [1, 1.2, 1, 1],
-        }}
-        transition={{
-          duration: 22,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
-
-      <motion.div
-        className="fixed inset-0 z-0 pointer-events-none opacity-60"
-        animate={{
-          background: [
-            "radial-gradient(ellipse 80% 60% at 20% 30%, rgba(255,255,255,0.6), transparent 50%), radial-gradient(ellipse 60% 80% at 80% 70%, rgba(255,255,255,0.4), transparent 50%)",
-            "radial-gradient(ellipse 80% 60% at 50% 20%, rgba(255,255,255,0.6), transparent 50%), radial-gradient(ellipse 60% 80% at 30% 80%, rgba(255,255,255,0.4), transparent 50%)",
-            "radial-gradient(ellipse 80% 60% at 80% 40%, rgba(255,255,255,0.6), transparent 50%), radial-gradient(ellipse 60% 80% at 60% 60%, rgba(255,255,255,0.4), transparent 50%)",
-            "radial-gradient(ellipse 80% 60% at 20% 30%, rgba(255,255,255,0.6), transparent 50%), radial-gradient(ellipse 60% 80% at 80% 70%, rgba(255,255,255,0.4), transparent 50%)",
-          ],
-        }}
-        transition={{
-          duration: 15,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
-
-      <motion.div
-        className="fixed z-0 pointer-events-none"
-        style={{
-          width: "200%",
-          height: "100px",
-          background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent)",
-          transform: "rotate(-35deg)",
-          top: "20%",
-          left: "-50%",
-        }}
-        animate={{
-          left: ["-50%", "100%"],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: "easeInOut",
-          repeatDelay: 4,
-        }}
+        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
       />
 
       {/* Noise texture overlay */}
@@ -199,7 +142,7 @@ export function LinkBioPage() {
         className="pointer-events-none fixed inset-0 z-[1]"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
-          opacity: 0.025,
+          opacity: 0.03,
         }}
       />
 
@@ -207,17 +150,33 @@ export function LinkBioPage() {
         initial="hidden"
         animate="visible"
         variants={containerVariants}
-        className="relative z-10 mx-auto max-w-[400px] w-full flex flex-col flex-1 justify-between"
+        className="relative z-10 mx-auto max-w-[420px] w-full flex flex-col flex-1 justify-between"
       >
         <motion.div variants={itemVariants} className="pt-2">
           <ProfileSection
-            name="GlassLinks"
-            bio="Креативный дизайнер и разработчик"
-            imageUrl="/images/544291433-18043960274659947-5766591717842883293-n.jpg"
+            name="BAMBOO Dimsum"
+            bio="Авторская китайская кухня · Димсамы, лапша и многое другое"
+            imageUrl="/placeholder.jpg"
           />
         </motion.div>
 
-        <motion.div className="space-y-3 py-8" variants={containerVariants}>
+        {/* Часы работы */}
+        <motion.div variants={itemVariants} className="mt-4 mb-1">
+          <div
+            className="flex items-center justify-center gap-2 px-4 py-2 rounded-full mx-auto w-fit"
+            style={{
+              background: "rgba(214, 179, 106, 0.12)",
+              border: "1px solid rgba(214, 179, 106, 0.3)",
+            }}
+          >
+            <Clock className="h-3.5 w-3.5" style={{ color: "#D6B36A" }} strokeWidth={2} />
+            <span className="text-xs font-medium" style={{ color: "#D6B36A" }}>
+              Пн–Вс · 12:00 – 23:00
+            </span>
+          </div>
+        </motion.div>
+
+        <motion.div className="space-y-3 py-6" variants={containerVariants}>
           {links.map((link) => (
             <motion.div key={link.title} variants={itemVariants}>
               <LinkCard {...link} />
@@ -226,7 +185,7 @@ export function LinkBioPage() {
         </motion.div>
 
         <motion.div variants={itemVariants} className="pb-2">
-          <SocialFooter socials={socials} copyright="2025 GlassLinks" />
+          <SocialFooter socials={socials} copyright="2025 BAMBOO Dimsum" />
         </motion.div>
       </motion.div>
     </main>
